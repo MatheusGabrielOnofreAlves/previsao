@@ -1,17 +1,10 @@
-import {usePathname} from 'next/navigation'
-import Link, {LinkProps} from 'next/link';
 
-
-type ActiveLinkProps = {
-  children: React.ReactNode
-} & LinkProps;
+import Link from 'next/link';
 
 
 
-const Navbar = ({ href , children, ...rest}: ActiveLinkProps) => {
-    const pathname = usePathname();
-
-    const isCurrentPath = pathname === href;
+export default function Navbar () {
+    
     return (
         <div>
         <nav className="bg-sky-400 dark:bg-blue-500  ">
@@ -23,10 +16,10 @@ const Navbar = ({ href , children, ...rest}: ActiveLinkProps) => {
                 </a>
                 <div className="hidden md:block">
                   <div className="flex items-baseline ml-10 space-x-4">
-                    <Link  className={`text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium ${isCurrentPath ? `text-red-400` : `text-green-500`}`} 
-                     {...rest} href={href} 
-                    >{children}
-                      <a>Home</a>
+                    <Link className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" 
+                    href="/"
+                    >
+                      Home
                     </Link>
                     <Link className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                       href="/clima"
@@ -100,5 +93,3 @@ const Navbar = ({ href , children, ...rest}: ActiveLinkProps) => {
       
     )
 }
-
-export default Navbar;
