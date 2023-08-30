@@ -23,7 +23,7 @@ const Navbar = ({ href , children, ...rest}: ActiveLinkProps) => {
                 </a>
                 <div className="hidden md:block">
                   <div className="flex items-baseline ml-10 space-x-4">
-                    <Link  className={`text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium ${isCurrentPath ? `text-red-400` : `text-green-400`}`} 
+                    <Link  className={`text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium ${isCurrentPath ? `text-red-400` : `text-green-500`}`} 
                      {...rest} href={href} 
                     >{children}
                       <a>Home</a>
